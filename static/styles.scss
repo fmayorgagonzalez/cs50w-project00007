@@ -1,57 +1,209 @@
 .contenedor {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .texto-imagen {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .texto-imagen img {
-    max-width: 100%;
-    margin-left: 10px;
+  max-width: 100%;
 }
 
-/* Media Query para pantallas más pequeñas */
+@media (min-width: 768px) {
+  p {
+    margin-left: -60px;
+  }
+}
+
 @media (max-width: 768px) {
-    .texto-imagen {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+  .texto-imagen {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-    .texto-imagen img {
-        margin-left: 0;
-        margin-top: 10px;
-    }
+  .texto-imagen img {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 
-p ,a{
-    font-family: cursive;
-    font-size: calc(1em + 1vw)
+p,
+a {
+  font-family: cursive;
+  font-size: calc(1em + 1vw);
 }
 
 .social-icons {
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .social-icons a {
-    margin: 0 10px;
-    display: inline-block;
-    transition: transform 0.3s;
+  margin: 0 10px;
+  display: inline-block;
+  transition: transform 0.3s;
 }
 
 .social-icons img {
-    width: 30px;
-    height: 30px;
+  width: 30px;
+  height: 30px;
 }
 
 .social-icons a:hover img {
-    transform: scale(1.2);
+  transform: scale(1.2);
 }
 
+header {
+  background: #f7f7f7;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  padding: 0.5rem calc((100vw - 1200px) / 2);
+  box-shadow: 0 4px 25px -22px black;
+}
+header .logo a {
+  font-size: 2rem;
+  padding-left: 25px;
+  font-family: cursive;
+  text-decoration: none;
+  color: #000000;
+}
+header nav ul {
+  display: flex;
+  text-decoration: none;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: -4px;
+}
+header nav ul li a {
+  display: flex;
+  align-items: center;
+  display: inline-block;
+  color: #111;
+  margin: 0 15px;
+  border: 3px solid transparent;
+  transition: 0.2s;
+  text-decoration: none;
+  list-style: none;
+  font-weight: bold;
+  font-size: 17px;
+}
+header nav ul li a:hover {
+  border-bottom-color: #3ca2f5;
+  color: #3ca2f5;
+}
+
+.active {
+  border-bottom-color: #3ca2f5;
+  color: #3ca2f5;
+}
+
+header nav ul #buttons {
+  padding: 12px 24px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  background: #2541b2;
+  margin-left: 16px;
+  color: #f7f7f7;
+  align-items: center;
+}
+header nav ul #buttons:hover {
+  background: #111;
+  transition: all 0.3s ease;
+}
+header .hamburger {
+  cursor: pointer;
+  display: none;
+}
+header .hamburger div {
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+  background: black;
+  margin-right: 16px;
+}
+
+@media only screen and (max-width: 900px) {
+  header {
+    padding: 0 30px;
+  }
+}
+@media only screen and (max-width: 850px) {
+  header .hamburger {
+    display: block;
+  }
+  header nav {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -100%;
+    top: 70px;
+    width: 100%;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    transition: 0.3s;
+    z-index: 10;
+  }
+  header nav ul {
+    display: block;
+    text-align: center;
+    margin-left: -35px;
+  }
+  header nav ul li {
+    margin: 50px 0;
+  }
+  header nav ul li a {
+    font-size: 1.5rem;
+  }
+  header nav ul li a a:active ~ nav {
+    left: 0;
+  }
+  header #nav_check:checked ~ nav {
+    left: 0;
+  }
+  .header1 nav {
+    height: 55vh;
+  }
+  .header1 nav ul li {
+    margin: 47px 0;
+  }
+  .header1 nav ul li a {
+    font-size: 17px;
+  }
+}
+
+.imagenestandar {
+  max-height: 520px !important;
+  height: auto !important;
+}
+
+table tbody tr th a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #0f0c0c;
+}
+
+table tbody tr th a:hover {
+  color: #3ca2f5;
+}
+
+#palabra {
+  color: #3ca2f5;
+  text-decoration: underline #000000c2;
+}
+
+#signo {
+  color: #000000c2;
+}
